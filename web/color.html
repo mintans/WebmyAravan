@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Color Wheel</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/color.css">
+
+  
+</head>
+
+<body>
+  <template id='ColorWheel'>
+  <div class='color-wheel'>
+    <div>
+      <router-link v-for='(_, name) in modes' :to='name' replace>{{ name }}</router-link>
+      <slider v-for='(cfg, name) in sliders' :cfg='cfg'>{{ name | capitalize }}</slider>
+    </div>
+    <color v-for='i in items' :mode='mode'
+      :h='360/items*i' :s='sliders.saturation.value' :l='sliders.lightness.value'></color>
+  </div>
+</template>
+
+<template id='ColorWheel-Slider'>
+  <div class='control'>
+    <div class='hl'>
+      <span class='right'>{{ cfg.value }}</span>
+      <slot></slot>
+    </div>
+    <input type='range' v-model.number='cfg.value'
+      :min='cfg.min' :max='cfg.max' :step='cfg.step' />
+  </div>
+</template>
+
+<template id='ColorWheel-Color'>
+  <div class='color' :style='style'>{{ color | uppercase }}</div>
+</template>
+
+<template id='App'>
+  <router-view></router-view>
+</template>
+  <script src='http://unpkg.com/vue'></script>
+<script src='http://unpkg.com/vue-router'></script>
+<script src='http://unpkg.com/hsluv'></script>
+<script src='http://unpkg.com/onecolor/one-color.js'></script>
+
+    <script src="js/color.js"></script>
+
+</body>
+</html>

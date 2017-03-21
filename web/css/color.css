@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+@media (min-height:   0px) { html { font-size:  8px; } }
+@media (min-height: 360px) { html { font-size: 10px; } }
+@media (min-height: 432px) { html { font-size: 12px; } }
+@media (min-height: 504px) { html { font-size: 14px; } }
+@media (min-height: 576px) { html { font-size: 16px; } }
+@media (min-height: 648px) { html { font-size: 18px; } }
+@media (min-height: 720px) { html { font-size: 20px; } }
+@media (min-height: 792px) { html { font-size: 22px; } }
+@media (min-height: 864px) { html { font-size: 24px; } }
+
+html {
+  overflow: hidden;
+  background: #2e3136;
+  color: #717782;
+}
+
+.hl {
+  color: #b0b9c9;
+}
+
+a {
+  display: block;
+  color: inherit;
+}
+
+a:not(:hover) {
+  text-decoration: none;
+}
+
+/*input[type=range] {
+ -webkit-appearance: none;
+  background: #717782;
+  height: .125em;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+ -webkit-appearance: none;
+  background: #b0b9c9;
+  width: .125em;
+  height: 1em;
+}*/
+
+.color-wheel {
+  position: absolute;
+  top: 50%; left: 50%;
+  font: 1em/1.15em 'Inconsolata', monospace;
+}
+
+.color-wheel > * {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.color-wheel .right {
+  float: right;
+}
+
+.color-wheel .control:nth-child(1n+2) {
+  margin-top: 1em;
+}
+
+.color-wheel .control label {
+  display: block;
+}
+
+.color-wheel .control input {
+  vertical-align: middle;
+  margin: 0;
+}
+
+.color-wheel .control input[type=range] {
+  font: inherit;
+  width: 10em;
+}
+
+.color-wheel .color {
+  position: absolute;
+  /*padding: 0 .75em;
+  border-radius: 2em;
+  line-height: 2em;
+  box-shadow: 0 0 .1em #1e2124;
+  background: #36393e;*/
+}
